@@ -1,0 +1,282 @@
+# Generate X values
+
+x <- seq(20, 80, by = 1)
+
+
+# Density values
+
+y <- dnorm(x, mean = 50, sd = 10)
+
+
+# Give the chart file a name.
+
+png(file = "dnorm.png")
+
+
+
+# Plot
+
+plot(x, y,
+     
+     type = "p",
+     
+     pch = 19,
+     
+     col = "blue",
+     
+     main="Normal Density (dnorm)",
+     
+     xlab = "Marks",
+     
+     ylab = "Density")
+
+
+# Regression line
+
+model <- lm(y ~ x)
+
+abline(model, col = "red", lwd = 2)
+
+
+# Model summary
+
+summary(model)
+
+dev.off()
+
+#pnorm
+  
+x <- seq(20,80,1)
+
+
+y <- pnorm(x, mean=50, sd=10)
+
+png(file='pnorm.png')
+
+plot(x,y,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Cumulative Probability (pnorm)",
+     
+     xlab="Marks",
+     
+     ylab="Probability")
+
+
+model <- lm(y~x)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+dev.off()
+
+#Qnorm:
+  
+p <- seq(0.01,0.99,0.05)
+
+
+x <- qnorm(p, mean=50, sd=10)
+
+png(file='qnorm.png')
+
+plot(p,x,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Quantile Function (qnorm)",
+     
+     xlab="Probability",
+     
+     ylab="Marks")
+
+
+model <- lm(x~p)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+dev.off()
+
+#Rnorm:
+  
+  set.seed(100)
+
+
+y <- rnorm(50, mean=50, sd=10)
+
+
+x <- 1:50
+
+png(file='rnorm.png')
+
+plot(x,y,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Random Normal Data (rnorm)",
+     
+     xlab="Observation",
+     
+     ylab="Marks")
+
+
+model <- lm(y~x)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+
+dev.off()
+
+#Dbinom:
+  
+  x <- 0:10
+
+
+y <- dbinom(x,
+            
+            size=10,
+            
+            prob=0.6)
+
+png(file='dbinom.png')
+
+plot(x,y,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Binomial Probability (dbinom)",
+     
+     xlab="Successes",
+     
+     ylab="Probability")
+
+
+model <- lm(y~x)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+dev.off()
+#Pbinom:
+  
+  x <- 0:10
+
+
+y <- pbinom(x,
+            
+            size=10,
+            
+            prob=0.6)
+
+png(file='pbinom.png')
+
+plot(x,y,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Cumulative Binomial (pbinom)",
+     
+     xlab="Successes",
+     
+     ylab="Probability")
+
+
+model <- lm(y~x)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+dev.off()
+
+#Qbinom:
+  
+p <- seq(0.1,0.9,0.1)
+
+
+x <- qbinom(p,
+            
+            size=10,
+            
+            prob=0.6)
+
+png(file='qbinom.png')
+
+plot(p,x,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Binomial Quantile (qbinom)",
+     
+     xlab="Probability",
+     
+     ylab="Successes")
+
+
+model <- lm(x~p)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+dev.off()
+
+#Rbinom:
+  
+  p <- seq(0.1,0.9,0.1)
+
+
+x <- rbinom(p,
+            
+            size=10,
+            
+            prob=0.6)
+
+png(file='rbinom.png')
+
+plot(p,x,
+     
+     pch=19,
+     
+     col="blue",
+     
+     main="Binomial Quantile (qbinom)",
+     
+     xlab="Probability",
+     
+     ylab="Successes")
+
+
+model <- lm(x~p)
+
+abline(model,col="red",lwd=2)
+
+
+summary(model)
+
+
+dev.off()
